@@ -29,9 +29,9 @@ services:
     <<: *base_service
     profiles: ["auto"]
     build: ./services/AUTOMATIC1111
-    image: sd-auto:64
+    image: sd-auto:67
     environment:
-      - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api --subpath proxy/7861/
+      - CLI_ARGS=--allow-code --medvram --xformers --enable-insecure-extension-access --api --subpath proxy/7861/ --cors-allow-origins=* --no-gradio-queue
 
   auto-cpu:
     <<: *automatic
